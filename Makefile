@@ -28,9 +28,9 @@ DEPS = ft_printf.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(DEPS)
-	$(MAKE) -s -C libft
-	@cp libft/libft.a .
-	@mv libft.a $(NAME)
+#	$(MAKE) -s -C libft
+#	@cp libft/libft.a .
+#	@mv libft.a $(NAME)
 	@ar rcs $@ $^
 	@echo Archive\ created!!
 

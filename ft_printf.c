@@ -53,7 +53,7 @@ static	int	ft_splitter(char const *src, va_list ptr)
 		return (count += ft_convertx(va_arg(ptr, unsigned int), 16, 0));
 	return(count);
 }
-
+/*
 int	main(void)
 {
 	char  *s;
@@ -64,7 +64,7 @@ int	main(void)
 //	int re2;
 	//system("clear");
 	s = "ciao figo";
-	x = 23847;
+	x = 23;
 	d = -212;
 	c = 'h';
 	ft_printf("Mi dice %s, %d, %c, %x\n", s, d, c, x);
@@ -74,4 +74,4 @@ int	main(void)
 //	int j = printf("%d\n", d);
 //	printf("j = %d\n", j);
 	return (0);
-}
+}*/

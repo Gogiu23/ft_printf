@@ -34,7 +34,7 @@ int	ft_convertx(unsigned int num, int base, int mode)
 	i = counter;
 	while (i > 0)
 	{
-		ft_putchar(buffer[i - 1]);
+		counter = ft_putchar(buffer[i - 1]);
 		i--;
 	}
 	free(buffer);
