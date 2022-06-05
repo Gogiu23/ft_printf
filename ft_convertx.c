@@ -6,31 +6,38 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 02:46:03 by gdominic          #+#    #+#             */
-/*   Updated: 2022/06/04 22:13:59 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/06/05 20:31:37 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
 int	ft_convertx(unsigned int num, int base, int mode)
 {
-	int	  counter;
-	char  *rep;
-	char  *ptr;
+	int counter;
+	char  *symbols;
 	char  *buffer;
-	buffer = (char *)malloc(sizeof(char) * 50);
+	char  *ptr;
 
-	if (mode == 0)
-		rep = "0123456789ABCDEF";
-	rep = "0123456789fedcba";
-	ptr = &buffer[49];
 	counter = 0;
+	buffer = (char *)malloc(sizeof(char) * 9);
+	if (!buffer)
+		return (0);
+	if (mode == 0)
+		symbols = "0123456789ABCDEF";
+	else
+		symbols = "0123456789abcdef";
+	ptr = &buffer[8];
 	*ptr = '\0';
-	while(num != 0)
+	while (num != 0)
 	{
-		*--ptr = rep[num%base];
+		*ptr = symbols[num%base];
 		num /= base;
-//		counter += ft_putchar(*ptr);
-		write (1, ptr, 1);
+		ptr++;
+	}
+	while (*ptr >= 0)
+	{
+		counter = ft_putchar(*ptr);
+		ptr--;
 	}
 	free(buffer);
 	return (counter);
