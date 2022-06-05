@@ -15,7 +15,8 @@ NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c ft_putchar.c ft_strlen.c ft_putnbr.c ft_putstr.c ft_convertx.c 
+SRC = ft_printf.c ft_putchar.c ft_strlen.c ft_putnbr.c ft_putstr.c \
+	  ft_convertx.c ft_putnbr_u.c 
 
 OBJS = ${SRC:.c=.o} 
 # OBJBONUS = ${SRCBONUS:.c=.o}
@@ -28,9 +29,9 @@ DEPS = ft_printf.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(DEPS)
-	$(MAKE) -s -C libft
-	@cp libft/libft.a .
-	@mv libft.a $(NAME)
+#	$(MAKE) -s -C libft 
+#	@cp libft/libft.a .
+#	@mv libft.a $(NAME)
 	@ar rcs $@ $^
 	@echo Archive\ created!!
 

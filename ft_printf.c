@@ -43,35 +43,43 @@ static	int	ft_splitter(char const *src, va_list ptr)
 	int count;
 	count = 0;
 
+	if (*src == '%')
+		return (count += ft_putchar(*src));
 	if (*src == 'c')
 		return (ft_putchar(va_arg(ptr, int)));
 	if (*src  == 'd' || *src  == 'i')
 		return (count += ft_putnbr(va_arg(ptr, int), count));
 	if (*src == 's')
-		return (ft_putstr(va_arg(ptr, char *)));
+		return (count += ft_putstr(va_arg(ptr, char *)));
 	if (*src == 'x')
 		return (count += ft_convertx(va_arg(ptr, unsigned int), 16, 0));
+	if (*src == 'X')
+		return (count += ft_convertx(va_arg(ptr, unsigned int), 16, 1));
+	if (*src == 'u')
+		return (count += ft_putnbr_u(va_arg(ptr, unsigned int), count));
 	return(count);
-}
-
+	}
+/*
 int	main(void)
 {
-	char  *s;
-	int	  x;
-	int	  d;
-	char  c;
+	char		  *s;
+	int			  x;
+	int			  d;
+	char		  c;
+	unsigned int  u;
 //	int re;
 //	int re2;
 	//system("clear");
-	s = "ciao figo";
-	x = 23847;
+	s = NULL;
+	x = 52369;
 	d = -212;
 	c = 'h';
-	ft_printf("Mi dice %s, %d, %c, %x\n", s, d, c, x);
-	printf("Mi dice %s, %d, %c, %x\n", s, d, c, x);
+	u = 10;
+	ft_printf("Mi dice %s, %d, %c, %x, %u, %%\n", s, d, c, x, u);
+	printf("Mi dice %s, %d, %c, %x, %u, %%\n", s, d, c, x, u);
 //	int k = ft_printf("%d\n", d);
 //	printf("k = %d\n", k);
 //	int j = printf("%d\n", d);
 //	printf("j = %d\n", j);
 	return (0);
-}
+}*/

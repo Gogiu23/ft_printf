@@ -13,29 +13,24 @@
 
 int	ft_convertx(unsigned int num, int base, int mode)
 {
-	int		i;
-	int		counter;
-	char	*rep; 
-	char	*buffer;
+	int	  counter;
+	char  *rep;
+	char  *ptr;
+	char  *buffer;
+	buffer = (char *)malloc(sizeof(char) * 50);
 
-	counter = 0;
-	buffer = (char *)malloc(sizeof(char) * 9);
-	if (mode)
+	if (mode == 0)
 		rep = "0123456789ABCDEF";
-	else
-		rep = "0123456789abcdef";
+	rep = "0123456789fedcba";
+	ptr = &buffer[49];
+	counter = 0;
+	*ptr = '\0';
 	while(num != 0)
 	{
-		buffer[counter] = rep[num % base];
+		*--ptr = rep[num%base];
 		num /= base;
-		counter++;
-	}
-	buffer[counter] = '\0';
-	i = counter;
-	while (i > 0)
-	{
-		ft_putchar(buffer[i - 1]);
-		i--;
+//		counter += ft_putchar(*ptr);
+		write (1, ptr, 1);
 	}
 	free(buffer);
 	return (counter);
