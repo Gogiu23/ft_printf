@@ -15,7 +15,8 @@ NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
-SRC = ft_printf.c ft_putchar.c ft_strlen.c ft_putnbr.c ft_putstr.c ft_convertx.c 
+SRC = ft_printf.c ft_putchar.c ft_strlen.c ft_putnbr.c ft_putstr.c \
+	  ft_convertx.c ft_putnbr_u.c 
 
 OBJS = ${SRC:.c=.o} 
 # OBJBONUS = ${SRCBONUS:.c=.o}
@@ -28,7 +29,11 @@ DEPS = ft_printf.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(DEPS)
+<<<<<<< HEAD
 #	$(MAKE) -s -C libft
+=======
+#	$(MAKE) -s -C libft 
+>>>>>>> 942a8463afdce64774c8a3fee7abab0fbd27c8f8
 #	@cp libft/libft.a .
 #	@mv libft.a $(NAME)
 	@ar rcs $@ $^
