@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_u.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 15:48:20 by gdominic          #+#    #+#             */
-/*   Updated: 2022/06/01 19:41:40 by gdominic         ###   ########.fr       */
+/*   Created: 2022/05/24 22:43:17 by gdominic          #+#    #+#             */
+/*   Updated: 2022/05/24 23:13:19 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "ft_printf.h"
 
-int	ft_strlen(const char *s)
+int	ft_putnbr_u(unsigned int n, int counter)
 {
-	int	count;
-
-	count = 0;
-	while (s[count] != '\0')
-		count++;
-	return (count);
+	if (n > 9)
+		counter = ft_putnbr_u(n / 10, counter);
+	ft_putchar(n % 10 + '0');
+	return (counter + 1);
 }
