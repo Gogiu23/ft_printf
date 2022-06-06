@@ -29,11 +29,7 @@ DEPS = ft_printf.h
 all: $(NAME)
 
 $(NAME): $(OBJS) $(DEPS)
-<<<<<<< HEAD
-#	$(MAKE) -s -C libft
-=======
 #	$(MAKE) -s -C libft 
->>>>>>> 942a8463afdce64774c8a3fee7abab0fbd27c8f8
 #	@cp libft/libft.a .
 #	@mv libft.a $(NAME)
 	@ar rcs $@ $^

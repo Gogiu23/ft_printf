@@ -13,11 +13,16 @@
 
 int	ft_convertx(unsigned int num, int base, int mode)
 {
-	int counter;
-	char  *symbols;
-	char  *buffer;
-	char  *ptr;
+	int		counter;
+	char	*symbols;
+	char	*buffer;
+	char	*ptr;
 
+	if (num == 0)
+	{
+		write(1, "0", 1);
+		return (1);
+	}
 	counter = 0;
 	buffer = (char *)malloc(sizeof(char) * 9);
 	if (!buffer)
@@ -27,23 +32,20 @@ int	ft_convertx(unsigned int num, int base, int mode)
 	else
 		symbols = "0123456789abcdef";
 	ptr = &buffer[8];
-	*ptr = '\0';
+	free(buffer);
+	*ptr = 0;
 	while (num != 0)
 	{
-		*ptr = symbols[num%base];
+		*ptr = symbols[num % base];
 		num /= base;
 		ptr++;
+		counter++;
 	}
-	while (*ptr >= 0)
+	*ptr = '\0';
+	while (*--ptr >= 0)
 	{
-<<<<<<< HEAD
-		counter = ft_putchar(buffer[i - 1]);
-		i--;
-=======
-		counter = ft_putchar(*ptr);
-		ptr--;
->>>>>>> 942a8463afdce64774c8a3fee7abab0fbd27c8f8
+		if (*ptr != 0)
+			ft_putchar(*ptr);
 	}
-	free(buffer);
 	return (counter);
 }
