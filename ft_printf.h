@@ -6,7 +6,7 @@
 /*   By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 19:30:25 by gdominic          #+#    #+#             */
-/*   Updated: 2022/06/06 21:09:21 by gdominic         ###   ########.fr       */
+/*   Updated: 2022/06/07 16:41:36 by gdominic         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef FT_PRINTF_H
@@ -25,6 +25,6 @@ int	ft_putnbr(int n, int count);
 int	ft_convertx(unsigned int num, int base, int mode);
 int	ft_putstr(const char *s);
 int	ft_putnbr_u(unsigned int n, int count);
-int	ft_pointeriscoming(unsigned long long strike, int nextbase);
+int	ft_ptr(unsigned long long strike, int nextbase);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gdominic <gdominic@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/27 20:23:09 by gdominic          #+#    #+#              #
-#    Updated: 2022/06/04 21:35:12 by gdominic         ###   ########.fr        #
+#    Updated: 2022/06/07 16:41:54 by gdominic         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 
 SRC = ft_printf.c ft_putchar.c ft_strlen.c ft_putnbr.c ft_putstr.c \
-	  ft_convertx.c ft_putnbr_u.c 
+	  ft_convertx.c ft_putnbr_u.c ft_ptr.c
 
 OBJS = ${SRC:.c=.o} 
 # OBJBONUS = ${SRCBONUS:.c=.o}
